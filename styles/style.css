@@ -82,6 +82,7 @@ html {
 }
 
 .visually-hidden {
+  position: absolute;
   inline-size: 1px;
   block-size: 1px;
   overflow: hidden;
@@ -305,10 +306,6 @@ button:focus-visible {
 .result__video-container,
 .content__list-container {
   position: relative;
-}
-
-.preloader {
-  position: absolute;
 }
 
 h1,
