@@ -50,14 +50,24 @@ html {
   justify-content: space-between;
 }
 
+.search-form__fieldset {
+  border: 0;
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 8px;
+}
+
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
   gap: 15px;
-}
-
-.search-form__fieldset {
-  border: 0;
 }
 
 .search-form__label {
@@ -71,6 +81,16 @@ html {
 
 .search-form__label:has(:focus-visible) {
   border: 1px solid #FFFFFF;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .search-form__textfield {
@@ -94,6 +114,7 @@ html {
 }
 
 .search-form__pseudo-checkbox {
+  display: inline-block;
   width: 19px;
   height: 19px;
   border: 1px solid #FFFFFF;
@@ -110,59 +131,56 @@ html {
 
 }
 
-.search-form__pseudo-checkbox:checked {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  color: #fff;
 
 }
 
-.content__list-container {
-  display: flex;
-  flex-direction: column;
-  height: 298px;
-  width: 399px;
-  overflow-y: auto;
-  gap: 30px;
+.button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #FFFFFF;
+  text-align: center;
 }
 
-.content__list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+button:hover {
+  text-decoration: underline;
+  color: #fff;
+  text-decoration-thickness: 1px;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
   gap: 26px;
-}
-
-.content__video-card {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-.content__video-card-description-container {
-  flex-grow: 1;
-}
-
-.content__video-card-thumbnail {
-  min-width: 194px;
-  height: 103px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
 }
 
 .title {
@@ -185,15 +203,67 @@ html {
   color: #545050;
 }
 
-.dash {
-  position: relative;
-  bottom: 20px;
-  vertical-align: middle;
-  padding-left: 5px;
+.content__list-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 298px;
+  width: 399px;
+  overflow-y: auto;
+  gap: 30px;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+  padding: 0 3px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  color:#fff;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card-thumbnail {
+  min-width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-title {
@@ -208,6 +278,7 @@ html {
   letter-spacing: 0%;
   text-transform: uppercase;
   color: #FFFFFF;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -221,14 +292,26 @@ html {
   color: #FFFFFF;
 }
 
-.visually-hidden {
+.more-button {
+  display: flex;
+  padding: 6px 142px;
+  height: 34px;
+  width: 100%;
+}
+
+.search-form__label,
+.button,
+.content__list-item {
+  cursor: pointer;
+}
+
+.result__video-container,
+.content__list-container {
+  position: relative;
+}
+
+.preloader {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
 }
 
 h1,
